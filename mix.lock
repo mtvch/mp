@@ -1,0 +1,3 @@
+%{
+  "xpeg": {:git, "https://github.com/zevv/xpeg.git", "7271bd3776b5a0f8ea9381a5380880e3e6d7bfe3", []},
+}
