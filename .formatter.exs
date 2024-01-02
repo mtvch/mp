@@ -2,7 +2,7 @@
 [
   inputs:
     Enum.flat_map(
-      ["{mix,.formatter}.exs", "{config,lib,test}/**/*.{ex,exs}"],
+      ["{mix,.formatter,.recode,.credo}.exs", "{config,lib,test}/**/*.{ex,exs}"],
       &Path.wildcard(&1, match_dot: true)
-    ) -- ["lib/mp/task4/grammar.ex"]
+    ) -- ["lib/mp/task4/parser/grammar.ex"]
 ]

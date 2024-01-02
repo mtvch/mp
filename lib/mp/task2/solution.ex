@@ -1,4 +1,7 @@
 defmodule Mp.Task2.Solution do
+  @moduledoc """
+  Решение 2-го задания
+  """
   # Нижняя граница
   @default_step 0.01
   @precision 2

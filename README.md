@@ -1,21 +1,17 @@
-# Mp
+Задания по курсу "Современные Методы Программирования", 1 сем. 1 курс магистратуры ФИТ НГУ.
 
-**TODO: Add description**
+## Структура проекта
+Исходный код решения каждого задания расположен в директории `lib/mp/task{НОМЕР ЗАДАНИЯ}`.
 
-## Installation
+API решения каждого задания является функция `Solution.run`.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mp` to your list of dependencies in `mix.exs`:
+Тест кейсы для каждого задания расположены в директории `test/mp/task{НОМЕР ЗАДАНИЯ}`
 
-```elixir
-def deps do
-  [
-    {:mp, "~> 0.1.0"}
-  ]
-end
-```
+## Запуск проекта
+Для того, чтобы убедиться в правильности решения задач, предлагается изучить и запустить тесты.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/mp>.
+Для запуска тестов необходимо [установить Elixir](https://elixir-lang.org/install.html).
 
+Затем выполнить:
+1. `mix deps.get` - скачивание зависимостей
+2. `mix test` - запуск тестов
