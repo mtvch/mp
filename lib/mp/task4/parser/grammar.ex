@@ -12,7 +12,7 @@ defmodule Mp.Task4.Parser.Grammar do
       S <- star({' ', '\t', '\r', '\n'})
       Expr <- S * Term * S * star(BinOp) * S
       Term <- NotOp | Const | Var | "(" * S * Expr * S * ")"
-      NotOp <- str("!") * Term * fn [x, _op | cs] -> [%Mp.Task4.AstNodes.Not{x: x} | cs] end
+      NotOp <- "!" * Term * fn [x | cs] -> [%Mp.Task4.AstNodes.Not{x: x} | cs] end
       Const <- int({'0', '1'}) * fn [x | cs] -> [%Mp.Task4.AstNodes.Const{value: x} | cs] end
       Var <- str({'a'..'z'}) * fn [x | cs] -> [%Mp.Task4.AstNodes.Var{name: x} | cs] end
       BinOp <- (str({'&', '|'}) | str("->")) * S * Expr * fn [b, op, a | cs] ->
