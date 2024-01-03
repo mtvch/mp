@@ -85,5 +85,19 @@ defmodule Mp.Task4.ParserTest do
                 b: %Const{value: 1}
               }} == Parser.parse(" ( 1 -> 0 ) & 1 ")
     end
+
+    test "ops priority" do
+      assert {:ok,
+              %Or{
+                a: %Var{name: "a"},
+                b: %Or{
+                  a: %And{
+                    a: %Var{name: "b"},
+                    b: %Var{name: "c"}
+                  },
+                  b: %Var{name: "d"}
+                }
+              }} == Parser.parse("a | b & c | d")
+    end
   end
 end
