@@ -6,12 +6,17 @@ defmodule Mp.Task2.Solution do
   @default_step 0.01
   @precision 2
 
-  # def integration_op(f) do
-  #   fn x when x > @a ->
-  #     b = find_next_grid_point(@a, @step, x)
-  #     @step * (f.(b) / 2) + calc(f, Float.round(b - @step, @precision))
-  #   end
-  # end
+  @doc """
+  Оператор интегрирования.
+  Принимает аргументом функцию `f` от одной переменной и
+  возвращают функцию одной переменной, вычисляющую (численно) выражение:
+  Интеграл от 0 до x f(t)dt
+  """
+  def integration_op(f) do
+    fn x when x > 0 ->
+      integration_sum(f, x)
+    end
+  end
 
   @doc """
   Считает интеграл от `нуля` до `x` для функции `f`
