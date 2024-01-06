@@ -56,18 +56,6 @@ defmodule Mp.Task4.Transform do
 
   defp move_not_to_vars(node), do: node
 
-  # defp remove_duplicate_nots(%Not{} = node) do
-  #   case node.x do
-  #     %Not{x: x} -> remove_duplicate_nots(x)
-  #     x -> %{node | x: remove_duplicate_nots(x)}
-  #   end
-  # end
-
-  # defp remove_duplicate_nots(%{a: a, b: b} = node) do
-  #   %{node | a: remove_duplicate_nots(a), b: remove_duplicate_nots(b)}
-  # end
-  # defp remove_duplicate_nots(node), do: node
-
   defp apply_distributive_law(%And{a: a, b: b}) do
     case {a, b} do
       {%Or{a: a_1, b: b_1}, %Or{a: a_2, b: b_2}} ->

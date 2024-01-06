@@ -21,6 +21,8 @@ defmodule Mp.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      # Memoization
+      {:memoize, "~> 1.4"},
       # PEG parser
       {:xpeg, git: "https://github.com/zevv/xpeg.git"},
       # DEV tools
