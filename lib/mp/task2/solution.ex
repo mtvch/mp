@@ -2,7 +2,7 @@ defmodule Mp.Task2.Solution do
   @moduledoc """
   Решение 2-го задания
   """
-  alias Mp.Task2.MemoizedStream
+  alias Mp.Task2.CachingStream
   # Нижняя граница
   @default_step 0.1
   @epsilon 0.01
@@ -64,14 +64,14 @@ defmodule Mp.Task2.Solution do
       0.0
     else
       s = get_cached_stream(f) || integration_stream(f, step)
-      {s, {_point, res}} = MemoizedStream.nth(s, n)
+      {s, {_point, res}} = CachingStream.nth(s, n)
       cache_stream(f, s)
       Float.round(res, @precision)
     end
   end
 
   defp integration_stream(f, step) do
-    MemoizedStream.iterate({0, 0}, fn {point, sum} ->
+    CachingStream.iterate({0, 0}, fn {point, sum} ->
       {point + step, sum + step * (f.(point) + f.(point + step)) / 2}
     end)
   end

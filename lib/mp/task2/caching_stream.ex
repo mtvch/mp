@@ -1,4 +1,4 @@
-defmodule Mp.Task2.MemoizedStream do
+defmodule Mp.Task2.CachingStream do
   @moduledoc false
   # В Elixir есть Stream для ленивых вычислений, но в них отсутствует оптимизация с запоминанием результата
   # Поэтому я добавил свою простую реализацию стрима на этот случай
